@@ -1,2 +1,3 @@
 # mao
 学习node中一个练手的小项目
+其中mao\modules\sendEmail.js中的发送邮件的邮箱密码需要自己设置一下，qq邮箱需要开启smtp服务生成授权码，163邮箱直接就是邮箱密码
