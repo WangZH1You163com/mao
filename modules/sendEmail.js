@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
     secureConnection: true, // use SSL
     auth: {
         user: '463497020@qq.com', // 邮箱账号
-        pass: 'klyjwynbubvkcacf'         // 其他邮箱为授权码，在阿里云是SMTP密码，需要设置一下
+        pass: '******'         // 其他邮箱为授权码，是qq邮箱的SMTP授权码，需要自己设置一下
     }
 });
 module.exports.send =  (mailOptions) => {
