@@ -54,13 +54,25 @@ $('#btnRegister').click(function (ev) {
     var logname = $.trim($('#logname').val());
     var password = $.trim($('#password').val());
     // console.log(name);
-    if (!mailCode) {
-        $('#myModal .modal-body').text('验证码不能为空！！2222');
+    // var acceptClause = $('#acceptClause').prop('checked');
+    var refuseClause = $('#refuseClause').prop('checked');
+    // console.log(acceptClause);
+    console.log(refuseClause);
+
+
+
+    if(refuseClause){
+        $('#myModal .modal-body').text('请阅读服务条款和隐私条款，并选择“我同意”222222222222');
         $('#myModal').modal();
         return;
     }
-    if (!name || !phone || !mail || !logname || !password) {
-        $('#myModal .modal-body').text('姓名，手机号，邮箱，用户名，密码不能为空！！2222');
+    // if (!mailCode) {
+    //     $('#myModal .modal-body').text('验证码不能为空！！2222');
+    //     $('#myModal').modal();
+    //     return;
+    // }
+    if (!name || !phone || !mail || !logname || !password || !mailCode) {
+        $('#myModal .modal-body').text('姓名，手机号，邮箱，用户名，密码，验证码不能为空！！2222');
         $('#myModal').modal();
         return;
     }
@@ -88,10 +100,14 @@ $('#btnRegister').click(function (ev) {
         return;
     }
 
+    
+    
 
 
 
-    $.post('/register', { name, gender, phone, mail, mailCode, logname, password }, function (data) {
+
+
+    $.post('/register', { name, gender, phone, mail, mailCode, logname, password,refuseClause }, function (data) {
 
         if (data.code != 200) {
             $('#myModal .modal-body').text(data.message);
@@ -110,3 +126,20 @@ $('#btnRegister').click(function (ev) {
 
 })
 
+// 服务条款和隐私条款
+$('.clause').click(function(){
+    $('#myModalclause .modal-body').text('我就是服务条款+隐私条款');
+    $('#myModalclause').modal();
+    $('#acceptClause').click(function(){
+        if($('#acceptClause').prop('checked')){
+            $('#refuseClause').prop('checked',false);
+        }
+    })
+    $('#refuseClause').click(function(){
+        if($('#refuseClause').prop('checked')){
+            $('#acceptClause').prop('checked',false);
+        }
+    })
+    
+    
+})

@@ -109,6 +109,8 @@ router.post('/register', function (req, res, next) {
   var mailCode = req.body.mailCode;
   var logname = req.body.logname;
   var password = req.body.password;
+  var refuseClause = req.body.refuseClause;
+  console.log(refuseClause);
   // console.log(emailCode);
   // console.log(mailCode);
   // 服务器端验证不能为空
@@ -118,7 +120,12 @@ router.post('/register', function (req, res, next) {
   }
   // emailCode服务器端保存的验证码，mailCode用户输入的验证码
   if(mailCode != emailCode){
-    res.json({ code: 204, message: '请查看邮箱中验证码邮件，输入正确的验证码' });
+    res.json({ code: 202, message: '请查看邮箱中验证码邮件，输入正确的验证码' });
+    return;
+  }
+
+  if(!refuseClause){
+    res.json({ code: 203, message: '请阅读服务条款和隐私条款，并选择“我同意”'});
     return;
   }
 

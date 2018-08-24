@@ -73,7 +73,11 @@
                             <input type="password" class="form-control" id="password" placeholder="请输入您的密码">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            点击注册账号，表示同意<a href="javascript:void(0);" class="clause">服务条款</a>和<a href="javascript:void(0);" class="clause">隐私条款</a>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary" id="btnRegister">提交</button>
@@ -111,6 +115,40 @@
                 </div>
                 <div class="modal-footer">
                     <a type="button" class="btn btn-primary" data-dismiss="modal" id="btnModal">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal2 -->
+    <div class="modal fade" id="myModalclause" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="acceptClause" checked>我同意
+                                    <br>
+                                    <input type="checkbox" id="refuseClause">我拒绝接受
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnClause">确定</button>
+                
+                
                 </div>
             </div>
         </div>

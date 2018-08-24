@@ -38,7 +38,8 @@ function checkMail(str) {
 // checkMail("contact@cnblogs.com");//调用
 
 
+var checkFormat = {
+    checkPone,checkMail
+}
 
-
-module.exports = checkPone;
-module.exports = checkMail;
+module.exports = checkFormat;
